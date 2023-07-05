@@ -1,6 +1,7 @@
+library(remotes)
 install_github("maciejgrochowskiUW/gw3RACE")
 library(gw3RACE)
-#every function is documented, you can check additional flags in help files
+#every function is documented, you can check additional options in help files
 #for some of the visualizations you can pick the colours of your liking. I suggest getting colour codes from https://www.rapidtables.com/web/color/RGB_Color.html
 
 
