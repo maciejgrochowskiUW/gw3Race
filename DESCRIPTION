@@ -1,0 +1,14 @@
+Package: gw3RACE
+Title: Vizualization of Genome-wide 3' RACE
+Version: 0.0.0.9000
+Authors@R: person("Maciej", "Grochowski", , "m.grochowski@student.uw.edu.pl", role = c("aut", "cre"))
+Description: With this package you can visualize the results of your Genome-wide 3' RACE experiment
+License: GPL
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Import: tidyverse,
+        reshape2,
+        data.table,
+        matrixStats,
+        magrittr
