@@ -7,8 +7,12 @@ License: GPL
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
-Import: tidyverse,
+Depends: tidyverse,
         reshape2,
         data.table,
         matrixStats,
         magrittr
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

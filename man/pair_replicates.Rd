@@ -9,7 +9,7 @@ pair_replicates(data, grep1 = "_clone\\\\d")
 \arguments{
 \item{data}{A list that is an output of gw3RACE::data_fix()}
 
-\item{grep1}{an argument passed to gsub(), regular expression that can be used to erase the indication of replication of experiment from name of data table stored on the list. By default it is "_clone\\\d"}
+\item{grep1}{an argument passed to gsub(), regular expression that can be used to erase the indication of replication of experiment from name of data table stored on the list. By default it is "_clone\\\\d"}
 }
 \value{
 List of vectors
