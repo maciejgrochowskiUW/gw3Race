@@ -15,7 +15,7 @@ tail_summary <- function(data, threshold = 20, gen_len) {
     dplyr::summarise(mean = mean(tail_len), reads = dplyr::n())
   type <- data %>% dplyr::select(gene, RNA_type) %>% dplyr::distinct()
   dat1 <- data %>% dplyr::select(gene, tail_type)
-  dat1 <- dat1 %>% dplyr::count(gene, tail_type) %>% dplyr::group_by(gene)
+  dat1 <- dat1 %>% dplyr::group_by(gene) %>% dplyr::count(tail_type)
   dat1 <- as.data.frame(reshape2::acast(dat1, gene~tail_type))
   dat1$counts <- rowSums(dat1, na.rm = TRUE)
   dat1 <- merge(dat1, gen_len, by.x =0, by.y = 1)
