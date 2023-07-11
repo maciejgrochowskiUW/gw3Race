@@ -22,7 +22,7 @@ tail_profiles <- function(listofnames = strainslist, data = dataList, plotcolour
       for (b in 1:length(x)) {
         temp1 <- as.data.frame(data[[x[b]]])
         temp1 <- temp1 %>% dplyr::select(c("tail_len","tail_type"))
-        tempx <- temp1 %>% dplyr::filter(tail_type == c("polyA", "polyAU", "oligoU"))
+        tempx <- temp1 %>% dplyr::filter(tail_type %in% c("polyA", "polyAU", "oligoU"))
         numberofreads <- length(tempx[,1])
         len_tail <- as.data.frame(table(temp1 %>% dplyr::filter(tail_type == type_of_tail) %>% dplyr::select(tail_len)))
         colnames(len_tail) <- c("tail_len", type_of_tail)
