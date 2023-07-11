@@ -12,7 +12,7 @@ readallcsvinfolder <- function(folder = getwd(), columnstokeep = c("gene", "coor
   setwd(folder)
   c0 <- list.files(getwd())
   c0 <- grep(".csv", c0, value = T)
-  c0 <- c0[!c0 == "gen_len.csv"]
+  c0 <- grep(".*_clone.*.csv", c0, value = T)
   c1 <- gsub("(_clone\\d).*.csv", "\\1.csv", c0)
   c2 <- gsub("delta", "", c1)
   c3 <- gsub(".csv", "", c2)
