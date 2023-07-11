@@ -20,7 +20,7 @@ tail_summary <- function(data, threshold = 20, gen_len) {
   dat1$counts <- rowSums(dat1, na.rm = TRUE)
   dat1 <- merge(dat1, gen_len, by.x =0, by.y = 1)
   dat1$no_tail <- dat1$no_tail/dat1$len
-  dat1$all_reads <- rowSums(dat1[,2:6], na.rm = TRUE)
+  dat1$all_reads <- rowSums(dat1[,c("mixed_tail", "no_tail", "polyA", "polyAU", "oligoU")], na.rm = TRUE)
   dat1 <- merge(dat1, tail_length, by = 1)
   dat1 <- dat1[dat1$counts >= threshold,]
   dat1 <- merge(dat1,type, by = 1)
