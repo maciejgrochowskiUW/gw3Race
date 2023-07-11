@@ -50,7 +50,7 @@ distance_to_TES <- function(listofnames = strainslist, data = dataList, plotcolo
     listofdataframes <- append(listofdataframes, list(distance_all))
   }
   melttable <- function(x){
-    distance_all <- data.table::melt(x, id = "distance")
+    distance_all <- reshape2::melt(x, id = "distance")
     colnames(distance_all) <- c("distance", "tail_type", "frequency")
     distance_all$distance <- as.numeric(levels(distance_all$distance))
     return(distance_all)

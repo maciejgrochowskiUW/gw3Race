@@ -54,7 +54,7 @@ tail_profiles <- function(listofnames = strainslist, data = dataList, plotcolour
   max_of_y <- unlist(max_of_y)
   max_of_y <- max(max_of_y)+1
   melttable <- function(x){
-    len_all <- data.table::melt(x, id = "tail_len")
+    len_all <- reshape2::melt(x, id = "tail_len")
     colnames(len_all) <- c("tail_len", "tail_type", "frequency")
     len_all$tail_len <- as.numeric(len_all$tail_len)
     return(len_all)
