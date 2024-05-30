@@ -12,9 +12,14 @@ setwd("C:/Users/TEAM_2018/Desktop/doktorat/Tail-seq")
 #read files and load them onto list. Exemplary .csv files are on my github.
 dataList <- readallcsvinfolder()
 
-#get rid of artifacts (this step is unnecessary for outputs of newer versions of Lidia Lipinska-Zubrycka software)
+#get rid of artifacts and duplicates
 #you can use this function to eliminate bias-creating genes from analysis (sadly you probably have to go through entire script and do some data mining to figure out what are those genes)
-dataList <- lapply(dataList, data_fix, excludedgenes = c("SPAC6F6.03c","SPCC1235.08c","SPCC663.10","SPAC4D7.10c", "SPCC576.08c", "SPBC18E5.06", "SPBC119.02", "SPAC22H12.04c", "SPAC4F10.14c", "SPCC1259.01c", "SPBC19G7.03c", "SPAC3G6.13c", "SPAC589.10c"))
+#you can also reassign mitochondrial genes to mt category by passing grep queries to mtgenes vector
+dataList <- lapply(dataList, data_fix,
+                   excludedgenes = c("SPAC6F6.03c","SPCC1235.08c","SPCC663.10","SPAC4D7.10c", "SPCC576.08c",
+                                     "SPBC18E5.06", "SPBC119.02", "SPAC22H12.04c", "SPAC4F10.14c", "SPCC1259.01c",
+                                     "SPBC19G7.03c", "SPAC3G6.13c", "SPAC589.10c"),
+                   mtgenes = ("SPMITTRNA", "SPRRNA.01", "SPRRNA.02"))
 
 #check number of reads of files with gw3RACE::nofReads() 
 nofReads(dataList)
