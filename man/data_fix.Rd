@@ -4,12 +4,14 @@
 \alias{data_fix}
 \title{Cleaning of the Genome-wide 3' RACE data}
 \usage{
-data_fix(data, excludedgenes = c())
+data_fix(data, excludedgenes = c(), mtgenesgrep = c())
 }
 \arguments{
 \item{data}{A data frame stored on the list that is the output of gw3RACE::readallcsvinfolder() function, generally it is recommended to use this function with lapply()}
 
 \item{excludedgenes}{A vector with names of genes that are supposed to be excluded from the analysis}
+
+\item{mtgenes}{A vector of grep queries that will reassign genes that originally are not assigned to mitochondrial class but should be (ex. mt tRNA and mt rRNA)}
 }
 \value{
 Data frame

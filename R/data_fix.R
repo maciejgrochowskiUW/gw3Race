@@ -12,8 +12,6 @@ data_fix <- function(data, excludedgenes = c(), mtgenesgrep = c()) {
 
   data <- data %>% distinct(start_R1, stop_R1, UMI, .keep_all = TRUE)
 
-  data <- data[!(data$tail_type == "jakis_bias"),]
-
   data <- data[!(data$tail_from == "grep" & data$tail_len < 10),]
 
   data <- data[!(data$gene %in% excludedgenes),]
