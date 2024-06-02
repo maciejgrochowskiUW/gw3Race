@@ -2,7 +2,7 @@
 #' @description data_fix() clears the data frame of reads that couldn't possibly exist and are some artifacts of initial analysis
 #' @param data A data frame stored on the list that is the output of gw3RACE::readallcsvinfolder() function, generally it is recommended to use this function with lapply()
 #' @param excludedgenes A vector with names of genes that are supposed to be excluded from the analysis
-#' @param mtgenes A vector of grep queries that will reassign genes that originally are not assigned to mitochondrial class but should be (ex. mt tRNA and mt rRNA)
+#' @param mtgenesgrep A vector of grep queries that will reassign genes that originally are not assigned to mitochondrial class but should be (ex. mt tRNA and mt rRNA)
 #'
 #' @return Data frame
 #' @export
