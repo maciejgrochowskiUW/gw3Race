@@ -8,7 +8,7 @@
 #' @export use_pipe(export = TRUE)
 #'
 #' @examples dataList <- readallcsvinfolder()
-readallcsvinfolder <- function(folder = getwd(), columnstokeep = c("gene", "coord_R2", "RNA_type", "tail_from", "tail_len", "tail_type", "stop_R2", "distance_to_TES", "rel_distance_to_TES"), RNAtype = "mRNA"){
+readallcsvinfolder <- function(folder = getwd(), columnstokeep = c("gene", "start_R1", "stop_R1", "RNA_type", "tail_from", "tail_len", "tail_type", "stop_R2", "distance_to_TES", "rel_distance_to_TES", "UMI"), RNAtype = "mRNA"){
   setwd(folder)
   c0 <- list.files(getwd())
   c0 <- grep(".csv", c0, value = T)

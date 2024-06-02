@@ -18,11 +18,11 @@ data_fix <- function(data, excludedgenes = c(), mtgenesgrep = c()) {
 
 
   if("coord_R2" %in% colnames(data)) {
-    data[data$coord_R2 == 0,]$stop_R2 <- NA
+    data[data$start_R1 == 0,]$stop_R2 <- NA
 
-    data[data$coord_R2 == 0,]$distance_to_TES <- NA
+    data[data$start_R1 == 0,]$distance_to_TES <- NA
 
-    data[data$coord_R2 == 0,]$rel_distance_to_TES <- NA
+    data[data$start_R1 == 0,]$rel_distance_to_TES <- NA
   }
 
   if(length(data[data$RNA_type == "other_type",]$distance_to_TES) > 0) {
