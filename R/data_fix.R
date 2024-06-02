@@ -29,7 +29,7 @@ data_fix <- function(data, excludedgenes = c(), mtgenesgrep = c()) {
     data[data$RNA_type == "other_type",]$distance_to_TES <- NA
   }
 
-  for (query in mtgenes) {
+  for (query in mtgenesgrep) {
 
     if(length(data[grep(query, data$gene),]$RNA_type) > 0) {
       data[grep(query, data$gene),]$RNA_type <- "mito_RNA"}
