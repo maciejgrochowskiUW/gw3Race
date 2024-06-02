@@ -2,6 +2,7 @@
 
 
 importFrom(magrittr,"%>%")
+export(readallcsvinfolder)
 export(data_fix)
 export(distance_to_TES)
 export(frequency_of_all_classes)
